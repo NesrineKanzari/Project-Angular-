@@ -1,0 +1,84 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 250px;
+  border: 2px solid;
+  padding: 10px;
+  margin: 10px;
+  background-color: #29394B;
+}
+h5{
+  color:#ffffff;
+}
+h2 {
+  font-size: 1.6em;
+}
+
+:host.session-web {
+  border-color: #50A3D8;
+}
+
+:host.session-web>h2 {
+  color: #50A3D8;
+}
+
+:host.session-mobile {
+  border-color: #43B48F;
+}
+
+:host.session-mobile>h2 {
+  color: #43B48F;
+}
+
+.tools {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.tools a{
+  margin: 2px;
+}
+.partager {
+  display: block;
+  background-color: #1176ec;
+  padding: 4px;
+  font-size: .8em;
+  border-radius: 7px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.delete {
+  display: block;
+  background-color: #EC4342;
+  padding: 4px;
+  font-size: .8em;
+  border-radius: 7px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.inscrire {
+  display: block;
+  background-color: #37AD79;
+  padding: 4px;
+  font-size: .8em;
+  border-radius: 7px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.ajouter {
+  display: block;
+  background-color: #50A3D8;
+  padding: 4px;
+  font-size: .8em;
+  border-radius: 7px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.inscrire.link-is-disabled {
+  pointer-events: none;
+  background-color: #88ad94;
+}

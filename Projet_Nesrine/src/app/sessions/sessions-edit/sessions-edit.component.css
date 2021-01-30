@@ -1,0 +1,96 @@
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+header,
+label {
+  color: #53ace4;
+}
+
+label {
+  padding-right: 10px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  padding: 20px;
+  background-color: #32435B;
+}
+
+input,
+select {
+  background-color: #ffffff;
+  color: #5b8bac;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset, 0 -1px 0 rgba(0, 0, 0, 0.05) inset;
+  border-color: #53ace4;
+  padding: 6px;
+  margin: 6px;
+}
+
+.ng-invalid:not(.ng-pristine):not(.required-invalid) {
+  border: 1px solid #d93a3e;
+}
+
+input[required].ng-invalid {
+  border-right: 5px solid #d93a3e;
+}
+
+input[required]:not(.required-invalid),
+input[required].ng-invalid:not(.required-invalid) {
+  border-right: 5px solid #378bad;
+}
+
+.error {
+  color: #d93a3e;
+}
+
+#year {
+  width: 50px;
+}
+
+button[type=submit] {
+  margin-top: 10px;
+  background-color: #4592bf;
+  border: 0;
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button[type=submit]:disabled {
+  margin-top: 10px;
+  background-color: #333;
+  color: #666;
+  cursor: default;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  color: #5878aa;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+}

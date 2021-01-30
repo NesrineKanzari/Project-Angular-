@@ -1,0 +1,171 @@
+<div class="container">
+  <div class="topButtons">
+    <i class="fas fa-user-plus" (click)="ajouter()"></i>
+    <i class="fas fa-sync-alt" (click)="refreshData()"></i>
+  </div>
+  <div class="f-table">
+    <form
+      ngNativeValidate
+      #ParticipantItemForm="ngForm"
+      (ngSubmit)="submit(ParticipantItemForm.value)"
+      *ngIf="newParticipant"
+    >
+      <table>
+        <thead>
+          <tr>
+            <th class="header" colspan="8">New Participant Info</th>
+          </tr>
+          <tr>
+            <th>CIN</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Adresse</th>
+            <th>Email</th>
+            <th>Societe</th>
+            <th>Poste</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tr>
+          <td>
+            <input
+              type="text"
+              name="cin"
+              ngModel
+              required
+              pattern="[0-9]{8}"
+              maxlength="8"
+              minlength="8"
+            (change)="checkCIN($event)"/>
+          </td>
+          <td><input type="text" name="name" ngModel required [disabled]="usedCin"/></td>
+          <td>
+            <input type="text" name="firstname" ngModel required [disabled]="usedCin"/>
+          </td>
+          <td><input type="text" name="adress" ngModel required [disabled]="usedCin"/></td>
+          <td><input type="email" name="email" ngModel required [disabled]="usedCin"/></td>
+          <td>
+            <input type="text" name="societe" ngModel required [disabled]="usedCin"/>
+          </td>
+          <td>
+            <input type="text" name="poste" ngModel required [disabled]="usedCin"/>
+          </td>
+          <td class="btn2" colspan="2">
+            <button type="submit" [disabled]="!ParticipantItemForm.form.valid">
+              <i class="fas fa-check"></i>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <table class="bigTable">
+      <thead>
+        <tr>
+          <th class="header" colspan="9" *ngIf="currentSessionId == -1">
+            Liste de Tous les Participants
+          </th>
+          <th class="header" colspan="9" *ngIf="currentSessionId != -1">
+            Liste des Participants dans la Session {{ currentSessionId }}
+          </th>
+          <th></th>
+        </tr>
+
+        <tr>
+          <th>CIN</th>
+          <th>Nom</th>
+          <th>Prenom</th>
+          <th>Adresse</th>
+          <th>Email</th>
+          <th>Societe</th>
+          <th>Poste</th>
+          <th colspan="2">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let participant of participantsList;
+            let i = index;
+            let isOdd = odd
+          "
+          [ngClass]="{ odd: isOdd, even: !isOdd }"
+        >
+          <td>
+            <input
+              type="text"
+              [(ngModel)]="participant.cin"
+              *ngIf="i == aModifier"
+              required
+              pattern="[0-9]{8}"
+              maxlength="8"
+              minlength="8"
+            /><span *ngIf="i != aModifier">{{ participant.cin }}</span>
+          </td>
+          <td>
+            <input
+              type="text"
+              [(ngModel)]="participant.name"
+              *ngIf="i == aModifier"
+              required
+            /><span *ngIf="i != aModifier">{{ participant.name }}</span>
+          </td>
+          <td>
+            <input
+              type="text"
+              [(ngModel)]="participant.firstname"
+              *ngIf="i == aModifier"
+              required
+            /><span *ngIf="i != aModifier">{{ participant.firstname }}</span>
+          </td>
+          <td>
+            <input
+              type="text"
+              required
+              [(ngModel)]="participant.adress"
+              *ngIf="i == aModifier"
+            /><span *ngIf="i != aModifier">{{ participant.adress }}</span>
+          </td>
+          <td>
+            <input
+              type="email"
+              [(ngModel)]="participant.email"
+              *ngIf="i == aModifier"
+              required
+            /><span *ngIf="i != aModifier">{{ participant.email }}</span>
+          </td>
+          <td>
+            <input
+              type="text"
+              [(ngModel)]="participant.societe"
+              *ngIf="i == aModifier"
+              required
+            /><span *ngIf="i != aModifier">{{ participant.societe }}</span>
+          </td>
+          <td>
+            <input
+              type="text"
+              [(ngModel)]="participant.poste"
+              *ngIf="i == aModifier"
+              required
+            /><span *ngIf="i != aModifier">{{ participant.poste }}</span>
+          </td>
+          <td class="btn">
+            <i
+              class="fas fa-edit"
+              (click)="modifier(i)"
+              *ngIf="i != aModifier"
+            ></i
+            ><i
+              class="fas fa-check"
+              *ngIf="i == aModifier"
+              (click)="modifier(-1)"
+            ></i>
+          </td>
+          <td class="btn">
+            <i class="fas fa-trash-alt" (click)="supprimer(participant.id)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

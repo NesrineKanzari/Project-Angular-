@@ -1,0 +1,39 @@
+:host {
+  width: 100%;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: 5px 5px 20px #00000010;
+}
+
+.container2 {
+  background: #002060;
+}
+
+.container p {
+  margin-right: 1em;
+  color: #ffffff;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+
+.fas {
+  padding: 10px;
+  font-size: 25px;
+  color: #ffffff;
+  background-color:#009F9F;
+  text-shadow: rgba(0, 0, 0, 0.2) 1px 1px 10px;
+}
+
+.fas:hover {
+  cursor: pointer;
+  color: white;
+}

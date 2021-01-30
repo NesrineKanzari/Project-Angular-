@@ -1,0 +1,38 @@
+.container {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  background-color: #53ACE4;
+  box-shadow: #22222210 8px 10px 15px;
+  width: 100px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 30px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width:calc(100% - 100px)
+}
+
+.icon {
+  color: #000000;
+  cursor: pointer;
+  font-size: 40px;
+  margin-bottom: 60px;
+
+}
+
+.icon:hover {
+  color: #32435B
+}

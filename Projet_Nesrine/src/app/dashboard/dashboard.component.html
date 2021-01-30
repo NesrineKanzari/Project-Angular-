@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="informations">
+    <div class="card sessions">
+      <img src="../../../assets/session.png" alt="sessions">
+      <p class=""><span>{{sessionsNbr}}</span><br>Sessions</p>
+    </div>
+    <div class="card participants">
+      <img src="../../../assets/participant.png" alt="participants">
+      <p class=""><span>{{participantsNbr}}</span><br>Participants</p>
+    </div>
+    <div class="card formateurs">
+      <img src="../../../assets/formateur.png" alt="formateurs">
+      <p class=""><span>{{formateursNbr}}</span><br>Formateurs</p>
+    </div>
+  </div>
+  <div class="tables">
+    <div class="track-container">
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Track
+            </th>
+            <th>
+              Nombre de Sessions
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor ="let item of tracksAndSessions">
+            <td>{{item.track}}</td>
+            <td>{{item.sessions}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="top-formateurs-container">
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Top Formateurs
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor ="let item of topFormateurs">
+            <td>{{item.nom +" "+item.prenom}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
